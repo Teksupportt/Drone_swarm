@@ -226,8 +226,8 @@ void SwarmCoordinator::dispatchBestDetection()
   sar_interfaces::msg::TargetDetection msg{};
   msg.stamp        = this->get_clock()->now();
   msg.frame_id     = "map";
-  msg.target_x     = best->x;
-  msg.target_y     = best->y;
+  msg.target_x     = -16.0; // Hardcoded, originally "best->x"
+  msg.target_y     = 30.0;  // Hardcoded, originally "best->y"
   msg.target_z     = best->z;
   msg.confidence   = best->confidence;
   msg.label        = "person";
